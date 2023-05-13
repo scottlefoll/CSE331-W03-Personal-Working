@@ -53,7 +53,7 @@
     },
     "/contacts/{id}": {
       "get": {
-        "description": "",
+        "description": "Get single Contact by id (ie. 'rick_walden')",
         "parameters": [
           {
             "name": "id",
@@ -71,7 +71,7 @@
     },
     "/contacts/name/{name}": {
       "get": {
-        "description": "",
+        "description": "Get single Contact by full name (ie. 'rick walden') - case insensitive",
         "parameters": [
           {
             "name": "name",
@@ -89,7 +89,7 @@
     },
     "/contacts/lastname/{lname}": {
       "get": {
-        "description": "",
+        "description": "Get all Contacts that match a last name (ie. 'smith') - case insensitive",
         "parameters": [
           {
             "name": "lname",
@@ -107,7 +107,7 @@
     },
     "/contacts/firstname/{fname}": {
       "get": {
-        "description": "",
+        "description": "Get all Contacts that match a first name (ie. 'jane') - case insensitive",
         "parameters": [
           {
             "name": "fname",
@@ -125,7 +125,7 @@
     },
     "/contacts/create": {
       "post": {
-        "description": "",
+        "description": "Create a Contact",
         "parameters": [
           {
             "name": "body",
@@ -164,7 +164,7 @@
     },
     "/contacts/update/{id}": {
         "put": {
-            "description": "",
+            "description": "Update a Contact by id(ie. 'jane_doe')",
             "parameters": [
               {
                 "name": "id",
@@ -209,7 +209,7 @@
         },
     "/contacts/delete/{id}": {
       "delete": {
-        "description": "",
+        "description": "Delete a contact by id (ie. 'rick_walden')",
         "parameters": [
           {
             "name": "id",
