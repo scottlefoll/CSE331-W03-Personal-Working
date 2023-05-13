@@ -1,0 +1,227 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "Contacts API",
+      "description": "CSE 341 Spring 23 Contacts API",
+      "version": "1.0.0"
+    },
+    "host": "localhost:3000",
+    "basePath": "",
+    "schemes": [
+      "http"
+    ],
+    "paths": {
+      "/api-docs": {
+        "get": {
+          "description": "",
+          "parameters": [],
+          "responses": {}
+        }
+      },
+      "/db": {
+        "get": {
+          "description": "",
+          "parameters": [],
+          "responses": {}
+        }
+      },
+      "/contacts": {
+        "get": {
+          "description": "",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "OK"
+            }
+          }
+        }
+      },
+
+      "/contacts/{id}": {
+        "get": {
+          "description": "Get one contact by Id",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "OK"
+            }
+          }
+        }
+      },
+
+      "/contacts/name/{name}": {
+        "get": {
+          "description": "Get one contact by full name, case insensitive",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": ["jane doe"],
+          "responses": {
+            "200": {
+              "description": "OK"
+            }
+          }
+        }
+      },
+
+      "/contacts/firstname/{fname}": {
+        "get": {
+          "description": "Get all contacts that match first name, case insensitive, sorted by last name",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": ["jane doe"],
+          "responses": {
+            "200": {
+              "description": "OK"
+            }
+          }
+        }
+      },
+
+      "/contacts/lastname/{lname}": {
+        "get": {
+          "description": "Get all contacts that match last name, case insensitive, sorted by first name",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": ["Doe"],
+          "responses": {
+            "200": {
+              "description": "OK"
+            }
+          }
+        }
+      },
+
+      "/contacts/create": {
+        "post": {
+          "description": "Create a new contact",
+          "parameters": [
+            {
+              "name": "body",
+              "in": "body",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "firstName": {
+                    "example": "any"
+                  },
+                  "lastName": {
+                    "example": "any"
+                  },
+                  "email": {
+                    "example": "any"
+                  },
+                  "favoriteColor": {
+                    "example": "any"
+                  },
+                  "birthday": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {
+            "201": {
+              "description": "Created"
+            },
+            "500": {
+              "description": "Internal Server Error"
+            }
+          }
+        }
+      },
+
+      "/contacts/update/{id}": {
+        "get": {
+            "description": "Get a contact by id, case insensitive",
+            "produces": [
+            "application/json"
+            ],
+            "parameters": [
+            {
+                "id": "jane_doe",
+                "required": true,
+                "type": "string"
+            }
+            ],
+            "responses": {
+            "200": {
+                "description": "OK"
+            }
+            }
+        },
+        "put": {
+            "description": "Update a contact by id",
+            "parameters": [
+            {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "type": "string"
+            },
+            {
+                "name": "body",
+                "in": "body",
+                "schema": {
+                "type": "object",
+                "properties": {
+                    "firstName": {
+                    "example": "Jane"
+                    },
+                    "lastName": {
+                    "example": "Doe"
+                    },
+                    "email": {
+                    "example": "janedoe@gmail.com"
+                    },
+                    "favoriteColor": {
+                    "example": "blue"
+                    },
+                    "birthday": {
+                    "example": "any"
+                    }
+                }
+                }
+            }
+            ],
+            "responses": {
+            "204": {
+                "description": "No Content"
+            },
+            "500": {
+                "description": "Internal Server Error"
+            }
+            }
+        }
+    },
+
+    "/contacts/delete/{id}": {
+        "description": "",
+        "parameters": [
+        {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+        }
+        ],
+        "responses": {
+        "204": {
+            "description": "No Content"
+        },
+        "500": {
+            "description": "Internal Server Error"
+        }
+        }
+    }
+  }
+}
