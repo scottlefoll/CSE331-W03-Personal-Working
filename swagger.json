@@ -5,10 +5,10 @@
     "description": "CSE 331 W04 Contacts API",
     "version": "1.0.0"
   },
-  "host": "cse-342-spring23-w03.onrender.com",
+  "host": "localhost:3000",
   "basePath": "",
   "schemes": [
-    "https"
+    "http"
   ],
   "paths": {
     "/api-docs": {
@@ -18,7 +18,7 @@
         "responses": {}
       }
     },
-    "/routes/": {
+    "/": {
       "get": {
         "description": "",
         "parameters": [],
@@ -29,7 +29,7 @@
         }
       }
     },
-    "/routes/db": {
+    "/db": {
       "get": {
         "description": "",
         "parameters": [],
@@ -40,7 +40,7 @@
         }
       }
     },
-    "/routes/contacts": {
+    "/contacts": {
       "get": {
         "description": "",
         "parameters": [],
@@ -51,7 +51,7 @@
         }
       }
     },
-    "/routes/contacts/{id}": {
+    "/contacts/{id}": {
       "get": {
         "description": "",
         "parameters": [
@@ -69,7 +69,7 @@
         }
       }
     },
-    "/routes/contacts/name/{name}": {
+    "/contacts/name/{name}": {
       "get": {
         "description": "",
         "parameters": [
@@ -87,7 +87,7 @@
         }
       }
     },
-    "/routes/contacts/lastname/{lname}": {
+    "/contacts/lastname/{lname}": {
       "get": {
         "description": "",
         "parameters": [
@@ -105,7 +105,7 @@
         }
       }
     },
-    "/routes/contacts/firstname/{fname}": {
+    "/contacts/firstname/{fname}": {
       "get": {
         "description": "",
         "parameters": [
@@ -123,7 +123,7 @@
         }
       }
     },
-    "/routes/contacts/create": {
+    "/contacts/create": {
       "post": {
         "description": "",
         "parameters": [
@@ -134,22 +134,22 @@
               "type": "object",
               "properties": {
                 "_id": {
-                  "example": "any"
+                  "example": "rick_walden"
                 },
                 "firstName": {
-                  "example": "any"
+                  "example": "Rick"
                 },
                 "lastName": {
-                  "example": "any"
+                  "example": "Walden"
                 },
                 "email": {
-                  "example": "any"
+                  "example": "rwalden@gmail.com"
                 },
                 "favoriteColor": {
-                  "example": "any"
+                  "example": "blue"
                 },
                 "birthday": {
-                  "example": "any"
+                  "example": "1990-01-01"
                 }
               }
             }
@@ -162,25 +162,52 @@
         }
       }
     },
-    "/routes/contacts/update/{id}": {
-      "put": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
+    "/contacts/update/{id}": {
+        "put": {
+            "description": "",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "type": "string"
+              },
+              {
+                "name": "body",
+                "in": "body",
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                      "firstName": {
+                        "example": "Renae"
+                      },
+                      "lastName": {
+                        "example": "Reilley"
+                      },
+                      "email": {
+                        "example": "brown"
+                      },
+                      "favoriteColor": {
+                        "example": "any"
+                      },
+                      "birthday": {
+                        "example": "1990-01-01"
+                      }
+                    }
+                  }
+              }
+            ],
+            "responses": {
+              "204": {
+                "description": "No Content"
+              },
+              "500": {
+                "description": "Internal Server Error"
+              }
+            }
           }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/routes/contacts/delete/{id}": {
+        },
+    "/contacts/delete/{id}": {
       "delete": {
         "description": "",
         "parameters": [

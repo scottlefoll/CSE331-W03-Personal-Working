@@ -141,6 +141,7 @@ async function getContactsByName(fullName, req, res) {
       };
       const result = await client.db(dbName).collection(coll).insertOne(newContact);
       res.status(201).send({ _id: result.insertedId });
+      res.send({ message: `Contact ${result.insertedId} created successfully` });
     } catch (err) {
       console.error(err);
       throw err;
