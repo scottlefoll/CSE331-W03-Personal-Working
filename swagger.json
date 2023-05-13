@@ -1,8 +1,8 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "My Contacts API",
-    "description": "CSE 331 W04 Contacts API",
+    "title": "MongoDB Contacts API",
+    "description": "CSE 331 W04 MongoDB Contacts API",
     "version": "1.0.0"
   },
   "host": "cse341-spring23-w03-personal-working.onrender.com",
@@ -13,14 +13,14 @@
   "paths": {
     "/api-docs": {
       "get": {
-        "description": "",
+        "description": "The API documentation for MongoDB Contacts API",
         "parameters": [],
         "responses": {}
       }
     },
     "/": {
       "get": {
-        "description": "",
+        "description": "MongoDB Contacts API Welcome Message",
         "parameters": [],
         "responses": {
           "200": {
@@ -31,7 +31,7 @@
     },
     "/db": {
       "get": {
-        "description": "",
+        "description": "List of all databases in CSE 341 SRL MongoDB",
         "parameters": [],
         "responses": {
           "200": {
@@ -42,7 +42,7 @@
     },
     "/contacts": {
       "get": {
-        "description": "",
+        "description": "All Contacts in MongoDB Contacts API",
         "parameters": [],
         "responses": {
           "200": {
