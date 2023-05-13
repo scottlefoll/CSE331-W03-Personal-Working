@@ -5,10 +5,10 @@
     "description": "CSE 331 W04 Contacts API",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "cse341-spring23-w03-personal-working.onrender.com",
   "basePath": "",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/api-docs": {
